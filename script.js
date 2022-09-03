@@ -12,7 +12,6 @@ function addingItem() {
     document.getElementById("banner").style="display:none";
     document.getElementById("todo").value="";
     document.getElementById("autolist").innerHTML += `<li class="clearlist" id=${deleteid}><p>${itemName}</p> <button id=${deleteid} onclick="deletelist(this.id);callbanner();">delete</button></li>`;
-    console.log(deleteid);
     return deleteid;
     }
 }
@@ -27,7 +26,7 @@ document.getElementById("banner").style="display:block";
 function deletelist(dl) {
    document.getElementById(dl).remove();
    
-   callbanner();
+   //callbanner();
        //  document.getElementById("banner").style="display:block";
     //let clr = document.getElementById("clearlist");
     //let abc=document.getElementsByTagName('button')[0].id;
@@ -36,9 +35,8 @@ function deletelist(dl) {
    // document.getElementById("banner").style="display:block";
 }
 function callbanner() {
-    let cbnr = document.getElementById("autolist");
-   console.log(cbnr);
-    if(cbnr===" "){
+
+    if(document.getElementById("autolist").childElementCount == 0){
         document.getElementById("banner").style="display:block";
     }
 }
